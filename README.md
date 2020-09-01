@@ -22,12 +22,12 @@ export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
 > [getting-started-with-llvm](https://llvm.org/docs/GettingStarted.html#getting-started-with-llvm)
 
 1. `cd llvm-project && mkdir build && cd build`
-2. `cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ../llvm`
-3. `cmake --build .`
+2. `cmake -G Ninja -DCMAKE_BUILD_TYPE=MinSizeRel ../llvm`
+3. `cmake --build . --target=x86_64-apple-macosx10.12.0`
 4. `ninja check-all`
 
 #### 重要参数解析
-- `-DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi"`
+- `-DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi"`
 - `-DCMAKE_BUILD_TYPE=`: Debug, Release, RelWithDebInfo, and MinSizeRel
 
 ### 配置LLVM
